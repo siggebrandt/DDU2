@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Guess a number</p>
+    <input>
+
+    <script>
+        const inputDOM = document.querySelector('input');
+        const pDOM = document.querySelector('p');
+
+        inputDOM.value = "";
+        const number = 1 + Math.floor(Math.random() * 5);
+
+        inputDOM.addEventListener("keydown", function (event) {
+            if (event.key == "Enter") {
+                let guess = inputDOM.value;
+                if (guess == number) {
+                    pDOM.textContent = `Yes!, ${guess} was the number`;
+                }
+                else {
+                    pDOM.textContent = `No, ${guess} was not the number`;
+                    inputDOM.value = "";
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
+<!--
+- eventListener från Enter
+- if randomNumber = true
+- - update <p>
+- if randomNumber = false
+- - update <p>
+-->

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const randomNumber = Math.floor(Math.random() * 5) + 1; // skapar 0 -4 och sedan +1 så det blir 1-5
+        // const randomNumber = Math.ceil(Math.random() * 5);  // fungerar också
+
+        let notFound = true; // boolean som är false från början
+        while (notFound) { // loop som körs tills found är true
+            let guess = prompt("gissa nummer")
+            if (guess == randomNumber) {
+                console.log("well done!");
+                notFound = false; // ändrar boolean till false så loop slutar
+            } else {
+                console.log("not quite!")
+            }
+        }
+
+
+        function internInt(min, max) {
+            const intervall = max - min + 1;
+            return min + Math.floor(Math.random() * intervall); // returnerar ett slumpat tal mellan min och max
+        }
+
+        // Math.random() generates a random number between 0 and 0.9999999
+        // Math.floor() rounds down to the nearest whole number
+        // Math.round() rounds to the nearest whole number
+        // Math.ceil() rounds up to the nearest whole number
+    </script>
+</body>
+
+</html>
